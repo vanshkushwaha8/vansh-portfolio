@@ -33,14 +33,14 @@ function Navbar() {
     <div className="max-w-screen-2xl container mx-auto px-4 md:px-8 h-16 shadow-md fixed top-0 left-0 right-0 z-50 bg-gray-100 dark:bg-gray-800 transition duration-300">
       <div className="flex justify-between items-center h-16">
         <div className="flex space-x-2 items-center">
-          <a href="https://www.linkedin.com/in/rahul-kumar-gupta-93a9b3283/">
+          <a href="https://www.linkedin.com/in/vansh-kushwaha-71640a25b/">
             <img
               src="/photo.avif"
               className="h-12 w-12 rounded-full border border-gray-300"
               alt="Profile"
             />
           </a>
-          <a href="https://www.linkedin.com/in/rahul-kumar-gupta-93a9b3283/">
+          <a href="https://www.linkedin.com/in/vansh-kushwaha-71640a25b/">
             <h1 className="font-semibold text-xl cursor-pointer text-gray-800 dark:text-gray-100">
               Vansh kushwaha<span className="text-blue-600 text-2xl"></span>
               <p className="text-sm text-gray-600 dark:text-gray-400">Web Developer</p>
