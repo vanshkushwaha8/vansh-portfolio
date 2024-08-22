@@ -8,13 +8,12 @@ import reactjs from "../public/reactjs.png";
 import mongoDB from "../public/mongodb.jpg";
 import express from "../public/express.png";
 
-
 function Experience() {
   const cardItem = [
     { id: 1, logo: html, name: "HTML" },
     { id: 2, logo: css, name: "CSS" },
     { id: 3, logo: javascript, name: "JavaScript" },
-    { id: 4, logo: Bootstrap, name: "Responsive Bootstrap" },
+    { id: 4, logo: Bootstrap, name: "Bootstrap" },
     { id: 5, logo: Nodejs, name: "Node.js" },
     { id: 6, logo: reactjs, name: "ReactJS" },
     { id: 7, logo: mongoDB, name: "MongoDB" },
@@ -24,25 +23,27 @@ function Experience() {
   return (
     <div
       name="Experience"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-8 my-16"
+      className="max-w-screen-2xl container mx-auto px-6 md:px-12 my-20"
     >
-      <h1 className="text-4xl font-bold text-center mb-8 text-gray-900">
-        SKILL SETS
+      <h1 className="text-4xl font-extrabold text-center mb-6 text-gray-900">
+        Skills & Technologies
       </h1>
-      <p className="text-center text-lg mb-10 text-gray-700">
-      Over the last 2 years, I’ve focused extensively on front-end development      </p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+      <p className="text-center text-lg mb-12 text-gray-600">
+        Over the past 2 years, I've honed my skills in front-end development, 
+        working extensively with a variety of technologies to build responsive and dynamic web applications.
+      </p>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
         {cardItem.map(({ id, logo, name }) => (
           <div
             key={id}
-            className="flex flex-col items-center justify-center border rounded-xl bg-white shadow-lg p-4 hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:scale-105"
+            className="flex flex-col items-center justify-center border-2 rounded-xl bg-gray-50 shadow-md p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out transform hover:scale-105"
           >
             <img
               src={logo}
               alt={name}
-              className="w-16 h-16 md:w-20 md:h-20 object-cover rounded-full mb-3"
+              className="w-20 h-20 object-cover rounded-full mb-4 border-2 border-gray-300 bg-white p-2"
             />
-            <div className="text-xl font-semibold text-gray-800">{name}</div>
+            <div className="text-lg font-semibold text-gray-800">{name}</div>
           </div>
         ))}
       </div>
