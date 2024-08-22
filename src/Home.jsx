@@ -45,7 +45,7 @@ function Home() {
                   </li>
                   
                   <li>
-                    <a href="https://github.com/rahulkumargupta99">
+                    <a href="https://github.com/vanshkushwaha8">
                       <FaGithub className="text-2xl cursor-pointer" />
                     </a>
                   </li>
