@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { MdMenu, MdClose, MdWbSunny, MdNightsStay } from "react-icons/md";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 function Navbar() {
   const [menu, setMenu] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+
   const navItems = [
     { id: 1, text: "Home" },
     { id: 2, text: "About" },
     { id: 3, text: "Experience" },
     { id: 4, text: "Project" },
-    
   ];
 
   useEffect(() => {
@@ -30,29 +30,30 @@ function Navbar() {
   }, [darkMode]);
 
   return (
-    <div className="max-w-screen-2xl container mx-auto px-4 md:px-8 h-16 shadow-md fixed top-0 left-0 right-0 z-50 bg-gray-100 dark:bg-gray-800 transition duration-300">
-      <div className="flex justify-between items-center h-16">
-        <div className="flex space-x-2 items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-16 bg-gradient-to-r from-blue-500 to-teal-500 dark:from-gray-900 dark:to-gray-700 shadow-md transition duration-300">
+      <div className="container mx-auto px-6 md:px-8 h-full flex items-center justify-between">
+        {/* Logo Section */}
+        <div className="flex items-center space-x-4">
           <a href="https://www.linkedin.com/in/vansh-kushwaha-71640a25b/">
             <img
               src="/photo.avif"
-              className="h-12 w-12 rounded-full border border-gray-300"
+              className="h-12 w-12 rounded-full border border-white dark:border-gray-600"
               alt="Profile"
             />
           </a>
-          <a href="https://www.linkedin.com/in/vansh-kushwaha-71640a25b/">
-            <h1 className="font-semibold text-xl cursor-pointer text-gray-800 dark:text-gray-100">
-              Vansh kushwaha<span className="text-blue-600 text-2xl"></span>
-              <p className="text-sm text-gray-600 dark:text-gray-400">Web Developer</p>
-            </h1>
-          </a>
+          <div>
+            <a href="https://www.linkedin.com/in/vansh-kushwaha-71640a25b/">
+              <h1 className="text-white text-2xl font-bold">Vansh Kushwaha</h1>
+              <p className="text-gray-200 text-sm">Web Developer</p>
+            </a>
+          </div>
         </div>
         {/* Desktop Navbar */}
-        <div className="flex items-center">
-          <ul className="hidden md:flex space-x-8 text-gray-800 dark:text-gray-100">
+        <div className="hidden md:flex items-center space-x-8">
+          <ul className="flex space-x-8 text-white">
             {navItems.map(({ id, text }) => (
               <li
-                className="hover:scale-105 duration-200 cursor-pointer hover:text-blue-500 dark:hover:text-blue-400"
+                className="transition-transform duration-300 transform hover:scale-105 cursor-pointer hover:text-yellow-300"
                 key={id}
               >
                 <Link
@@ -60,22 +61,25 @@ function Navbar() {
                   smooth={true}
                   duration={500}
                   offset={-70}
-                  activeClass="text-blue-600 font-bold"
+                  activeClass="text-yellow-300 font-bold"
                 >
                   {text}
                 </Link>
               </li>
             ))}
           </ul>
+        </div>
+        {/* Dark Mode Toggle and Mobile Menu Icon */}
+        <div className="flex items-center space-x-4">
           <div
             onClick={() => setDarkMode(!darkMode)}
-            className="cursor-pointer ml-4 text-gray-800 dark:text-gray-100"
+            className="text-white cursor-pointer"
           >
             {darkMode ? <MdWbSunny size={24} /> : <MdNightsStay size={24} />}
           </div>
           <div
             onClick={() => setMenu(!menu)}
-            className="md:hidden cursor-pointer ml-4 text-gray-800 dark:text-gray-100"
+            className="md:hidden text-white cursor-pointer"
           >
             {menu ? <MdClose size={24} /> : <MdMenu size={24} />}
           </div>
@@ -83,20 +87,20 @@ function Navbar() {
       </div>
       {/* Mobile Navbar */}
       {menu && (
-        <div className="bg-gray-100 dark:bg-gray-800 transition duration-300">
-          <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-3 text-xl text-gray-800 dark:text-gray-100">
+        <div className="fixed inset-0 bg-gray-900 bg-opacity-90 dark:bg-gray-800 transition duration-300">
+          <ul className="flex flex-col items-center justify-center h-full space-y-6 text-white">
             {navItems.map(({ id, text }) => (
               <li
-                className="hover:scale-105 duration-200 font-semibold cursor-pointer hover:text-blue-500 dark:hover:text-blue-400"
+                className="text-xl font-semibold cursor-pointer hover:text-yellow-300 transition duration-300"
                 key={id}
               >
                 <Link
-                  onClick={() => setMenu(!menu)}
+                  onClick={() => setMenu(false)}
                   to={text}
                   smooth={true}
                   duration={500}
                   offset={-70}
-                  activeClass="text-blue-600 font-bold"
+                  activeClass="text-yellow-300 font-bold"
                 >
                   {text}
                 </Link>
@@ -105,7 +109,7 @@ function Navbar() {
           </ul>
         </div>
       )}
-    </div>
+    </nav>
   );
 }
 
