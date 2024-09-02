@@ -7,6 +7,8 @@ import Nodejs from "../public/nodejs.png";
 import reactjs from "../public/reactjs.png";
 import mongoDB from "../public/mongodb.jpg";
 import express from "../public/express.png";
+import reactNative from "../public/reactjs.png";
+
 
 function Experience() {
   const cardItem = [
@@ -18,6 +20,7 @@ function Experience() {
     { id: 6, logo: reactjs, name: "ReactJS" },
     { id: 7, logo: mongoDB, name: "MongoDB" },
     { id: 8, logo: express, name: "Express JS" },
+    { id: 8, logo: reactNative, name: "React-Native" },
   ];
 
   return (
